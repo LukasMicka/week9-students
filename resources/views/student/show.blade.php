@@ -27,8 +27,9 @@
     <section class="detention-assign">
         <h2>Give detention</h2>
 
-        <form action="" method="post">
-
+        <form action="{{ action('StudentController@store', $student->id) }}" method="post">
+            @csrf
+            {{ method_field('PUT') }}
             <input type="text" name="subject" placeholder="Reason for detention">
 
             <textarea name="description" placeholder="Thorough description"></textarea>
